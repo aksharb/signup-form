@@ -1,5 +1,7 @@
 /* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -20,21 +22,35 @@ body {
   line-height: 1.5;
   /* 5. Improve text rendering */
   -webkit-font-smoothing: antialiased;
+  font-family: system-ui;
 }
 
 /* 6. Improve media defaults */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
 /* 7. Inherit fonts for form controls */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
 /* 8. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
@@ -42,13 +58,159 @@ p, h1, h2, h3, h4, h5, h6 {
 p {
   text-wrap: pretty;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
 }
 
 /*
   10. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
+}
+
+@font-face {
+  font-family: "Norse";
+  src:
+    url("fonts/Norse.woff2") format("woff2"),
+    url("fonts/Norse.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Norse";
+  src:
+    url("fonts/Norse-Bold.woff2") format("woff2"),
+    url("fonts/Norse-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+.container {
+  display: flex;
+}
+
+.left {
+  height: 100vh;
+  width: 36vw;
+  background: url(/lake.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logo-strip {
+  margin-top: 20vh;
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #dddddd99;
+}
+.logo img {
+  width: 80px;
+}
+
+.logo-text {
+  font-family: Norse;
+  font-size: 5rem;
+  font-weight: 800;
+}
+.credits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: gainsboro;
+  padding: 10px 0;
+  font-weight: bold;
+  background-color: #2b2a2a80;
+}
+.credits a {
+  color: gainsboro;
+  margin: 0 4px;
+}
+
+.right {
+  /* padding-left: 40px; */
+  /* height: 100vh; */
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 12vh;
+  height: 40vh;
+  padding-left: 40px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  background-color: #e3f2fd;
+}
+.header > p {
+  font-style: italic;
+}
+.greetings {
+  width: 70%;
+}
+
+.form-strip {
+  /* padding-left: 40px; */
+  padding: 20px 0 40px 40px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.form-row {
+  display: flex;
+  gap: 100px;
+  padding-top: 16px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+}
+label {
+  color: #7e8a97;
+  font-weight: 600;
+}
+input {
+  width: 200px;
+  border: 1px solid #c7c8cc;
+  border-radius: 5px;
+}
+
+input:user-invalid {
+  border: 1px solid red;
+}
+
+.form-lower {
+  padding-top: 40px;
+  padding-left: 40px;
+  /* background-color: #eeeeee; */
+}
+
+#signup {
+  padding: 10px 30px;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+  background-color: #1591dc;
+  cursor: pointer;
+}
+#already {
+  padding-top: 20px;
+}
+#already a {
+  text-decoration: none;
+  color: #1591dc;
+  font-weight: 600;
 }
